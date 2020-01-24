@@ -1,0 +1,2 @@
+# JudgeFriendNew
+JudgeFriend App FICS
