@@ -14,12 +14,13 @@ class CreateTeamsTable extends Migration
     public function up()
     {
         Schema::create('teams', function (Blueprint $table) {
-            $table->increments('id')->index();
+            $table->integer('id');
             $table->string('project_name');
             $table->string('ready')->default('No');
-            $table->integer('participants_no');
+            $table->integer('participants_no')->default(1);
             $table->string('arrived')->default('No');
             $table->timestamps();
+            $table->unique('id');
         });
     }
 

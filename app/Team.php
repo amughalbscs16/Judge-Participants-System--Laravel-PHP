@@ -12,7 +12,7 @@ class Team extends Model
      * @var array
      */
     protected $fillable = [
-    	'project_name', 'judge_id', 'participants_no', 'check', 'ready'
+    	'id', 'project_name', 'judge_id', 'participants_no', 'check', 'ready'
 	];
 
     /**
@@ -21,7 +21,7 @@ class Team extends Model
      * @var array
      */
     protected $guarded = [
-    	'id'
+    	
     ];
     protected $hidden = [
         'remember_token',
