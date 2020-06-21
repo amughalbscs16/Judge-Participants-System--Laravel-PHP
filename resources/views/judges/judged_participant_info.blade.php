@@ -63,7 +63,10 @@
 								<td>{{$team->Q6}}/10</td>
 								<td>{{$team->comments_q6}}</td>
 							</tr>
-
+							<tr>
+								<th scope="row">Total Score:</th>
+								<td colspan="2">{{$team->total_score}}/100</td>
+							</tr>
 
 							{{--Judge # 2--}}
                             <?php } else if ($team->judge_id_2==$judge){ ?>
@@ -232,7 +235,8 @@
 							<?php } ?>
 							</tbody>
 						</table>
-
+						<h2>Qualitative Assessment</h2>
+						<textarea>{{$team->assessment}}</textarea>
 						<h2>Qualitative Assessment</h2>
 						<textarea>{{$team->assessment}}</textarea>
 					</div>
