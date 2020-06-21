@@ -80,9 +80,8 @@ class JudgeController extends Controller
             
             $judgeteam->check="Yes";
             $judgeteam->save();
-            return back()->with('message', 'Saved');
         } 
-        //return redirect()->route('judgeparticipants');
+        return redirect()->route('judgeparticipants');
       }
       else return back()->with('message', ' ');
   }
