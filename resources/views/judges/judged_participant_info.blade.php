@@ -237,8 +237,7 @@
 						</table>
 						<h2>Qualitative Assessment</h2>
 						<textarea>{{$team->assessment}}</textarea>
-						<h2>Qualitative Assessment</h2>
-						<textarea>{{$team->assessment}}</textarea>
+
 					</div>
 
 					<div class="panel-footer">FICS '20, <a href="https://github.com/amughalbscs16">Developer</a></div>
