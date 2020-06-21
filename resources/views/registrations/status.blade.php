@@ -38,12 +38,12 @@
 								{{--<th scope="col"></th>--}}
 
 								<th scope="col">Ready</th>
-								<th scope="col">Judged by 1st Judge</th>
+<!--								<th scope="col">Judged by 1st Judge</th>
 								<th scope="col">Judged by 2nd Judge</th>
 								<th scope="col">Judged by 3rd Judge</th>
 								<th scope="col">Judged by 4th Judge</th>
 								<th scope="col">Judged by 5th Judge</th>
-								<th scope="col">Judged by 6th Judge</th>
+								<th scope="col">Judged by 6th Judge</th>-->
 							</tr>
 							</thead>
 							<tbody>
@@ -68,12 +68,12 @@
 										<td>{{$jp->ready}}</td>
 									@endif
 									
-									<td>{{$jp->check}}</td>
+<!--									<td>{{$jp->check}}</td>
 									<td>{{$jp->check_2}}</td>
 									<td>{{$jp->check_3}}</td>
 									<td>{{$jp->check_4}}</td>
 									<td>{{$jp->check_5}}</td>
-									<td>{{$jp->check_6}}</td>
+									<td>{{$jp->check_6}}</td>-->
 								</tr>
 							@endforeach
 							</tbody>
