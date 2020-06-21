@@ -236,7 +236,7 @@
 							</tbody>
 						</table>
 						<h2>Qualitative Assessment</h2>
-						<textarea width="90%">{{$team->assessment}}</textarea>
+						{{$team->assessment}}
 
 					</div>
 
