@@ -53,6 +53,7 @@ def addJudgeRecord(jteam):
 		mycursor = mydb.cursor()
 		timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
 		data = ( jteam[0], jteam[1], jteam[2], getPassword(jteam[0]+jteam[3]+jteam[0]+jteam[0]+jteam[3]) , 'judge', timestamp, timestamp)
+		print(jteam[0],',',jteam[1],',',jteam[2],',',jteam[0]+jteam[3]+jteam[0]+jteam[0]+jteam[3])
 		query = "Insert into "+table_name+"(id, name, email, password, role, created_at, updated_at) values (%s, %s, %s, %s, %s, %s, %s)"
 		mycursor.execute(query, data)
 		mydb.commit()
@@ -74,14 +75,14 @@ import csv
 with open('judgesxteams.csv', 'r') as file:
     reader = csv.reader(file)
     for row in reader:
-        print(row)
+        #print(row)
         addJudgeTeamRecord(row)
         addJudgeRecord(row)
 #getPassword("Muhammad")
 with open('teams_list_original.txt', 'r') as file:
     readerteams = csv.reader(file, delimiter = '(')
     for row in readerteams:
-        print(row)
+        #print(row)
        	addTeamRecord(row)
 #read .csv file 
 #read .txt file (split on "(")
