@@ -23,7 +23,7 @@
 						<img class="img-responsive" src="http://fics.seecs.edu.pk/images/fics-home.jpg">
 					</div>
 
-					<div class="panel-footer">FICS '18</div>
+					<div class="panel-footer">FICS '20, <a href="https://github.com/amughalbscs16">Developer</a></div>
 				</div>
 			</div>
 		</div>
