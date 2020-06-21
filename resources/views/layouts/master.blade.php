@@ -56,7 +56,7 @@
                     </div>
                     @yield('content')
 
-                    <div class="panel-footer">FICS '18</div>
+                    <div class="panel-footer">FICS '20, Dev: <a href="https://github.com/amughalbscs16">Ali</a></div>
                 </div>
             </div>
         </div>
