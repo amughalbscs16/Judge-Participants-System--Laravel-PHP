@@ -91,7 +91,7 @@ class JudgeController extends Controller
        $judge = User::find(auth()->user()->id);
 
       if (strtoupper($judge->role)=="JUDGE"){
-        $participant = DB::table('judge_teams')->join('teams', 'judge_teams.team_id', 'teams.id')->where('judge_teams.id','=',$judge->id)->where('judge_teams.check','=','Yes')->get()->all();
+        $participant = DB::table('judge_teams')->join('teams', 'judge_teams.team_id', 'teams.id')->where('judge_teams.check','=','Yes')->get()->all();
         dd($participant);
         return view('judges.judged_participants')->with('participants',$participant)->with('message', '');
       }
