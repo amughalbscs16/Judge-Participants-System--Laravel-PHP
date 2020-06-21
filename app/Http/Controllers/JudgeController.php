@@ -91,8 +91,8 @@ class JudgeController extends Controller
        $judge = User::find(auth()->user()->id);
 
       if (strtoupper($judge->role)=="JUDGE"){
-        $participant = DB::table('judge_teams')->join('teams', 'judge_teams.team_id', 'teams.id')->where('judge_teams.check','=','Yes')->get()->all();
-        dd($participant);
+        $participant = DB::table('judge_teams')->join('teams', 'judge_teams.team_id', 'teams.id')->where('judge_teams.judge_id','=',$judge->id)->where('judge_teams.check','=','Yes')->get()->all();
+        //dd($participant);
         return view('judges.judged_participants')->with('participants',$participant)->with('message', '');
       }
       else return back()->with('message', '');
@@ -100,7 +100,7 @@ class JudgeController extends Controller
 
   function getJudgedParticipant($tid){
       $judge = User::find(auth()->user()->id);
-      $team = JudgeTeams::join('teams', 'judge_teams.team_id', 'teams.id')->where('judge_teams.id','=',$judge->id)->where('judge_teams.check','=','Yes')->
+      $team = JudgeTeams::join('teams', 'judge_teams.team_id', 'teams.id')->where('judge_teams.judge_id','=',$judge->id)->where('judge_teams.check','=','Yes')->
       where('teams.id','=',$tid)->get()->first();
       #dd($team->check);
       if(strtoupper($judge->role)=="JUDGE" && strtoupper($team->check) == "YES"){
