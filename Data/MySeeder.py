@@ -34,7 +34,8 @@ def addJudgeTeamRecord(jteam):
 	table_name = 'judge_teams'
 	mycursor = mydb.cursor()
 	timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
-	data = ( jteam[0], jteam[3], timestamp, timestamp)
+	print(jteam[0].replace("ï»¿", ''), jteam[3], timestamp, timestamp)
+	data = ( jteam[0].replace("ï»¿", ''), jteam[3], timestamp, timestamp)
 	query = "Insert into "+table_name+"(judge_id, team_id, created_at, updated_at) values (%s, %s, %s, %s)"
 	mycursor.execute(query, data)
 	mydb.commit()
@@ -52,14 +53,14 @@ def addJudgeRecord(jteam):
 		table_name = 'users'
 		mycursor = mydb.cursor()
 		timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
-		data = ( jteam[0], jteam[1], jteam[2], getPassword(jteam[0]+jteam[3]+jteam[0]+jteam[0]+jteam[3]) , 'judge', timestamp, timestamp)
-		print(jteam[0],',',jteam[1],',',jteam[2],',',jteam[0]+jteam[3]+jteam[0]+jteam[0]+jteam[3])
+		data = ( jteam[0].replace("ï»¿", ''), jteam[1], jteam[2], getPassword(jteam[0]+jteam[3]+jteam[0]+jteam[0]+jteam[3]) , 'judge', timestamp, timestamp)
+		print(jteam[0].replace("ï»¿", ''),',',jteam[1],',',jteam[2],',',jteam[0]+jteam[3]+jteam[0]+jteam[0]+jteam[3])
 		query = "Insert into "+table_name+"(id, name, email, password, role, created_at, updated_at) values (%s, %s, %s, %s, %s, %s, %s)"
 		mycursor.execute(query, data)
 		mydb.commit()
 		mycursor.close()
 		mydb.close()
-		judges[jteam[2]] = int(jteam[0])
+		judges[jteam[2]] = jteam[0].replace("ï»¿", '')
 
 def getPassword(password):
 	passwd = bytes(password, 'utf-8')
