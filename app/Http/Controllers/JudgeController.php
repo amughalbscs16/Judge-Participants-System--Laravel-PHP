@@ -12,7 +12,7 @@ class JudgeController extends Controller
   {
       $id = auth()->user()->id;
       $judge = User::find($id);
-      print_r($id);
+     //print_r($id);
       //print_r($judge);
       if (strtoupper($judge->role)=="JUDGE"){
           $participant = '';
