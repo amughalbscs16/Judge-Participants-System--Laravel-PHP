@@ -12,7 +12,7 @@
 */
 
 
-Auth::routes();
+Auth::routes(['register' => false]);
 Route::middleware(['auth'])->group(function () {
   Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
   Route::get('/', 'JudgeTeamController@judgeTeamHome')->name('judgeHome');
