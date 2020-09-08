@@ -1,0 +1,24 @@
+Judge ID, Name, Email, Password
+1 , Mr. Rehan Muneer  , rehan_muneer@hotmail.com , 117411174
+2 , Mr. Farukh Mehmood  , farukhmehmood@fics20.onmicrosoft.com , 217422174
+3 , Fahad Islam Tiwana , fahadtiwana@gmail.com , 317433174
+5 ,  Imtiaz Rastgar  , imtiaz@rastgar.com , 517455174
+6 , Dr. Shahid Waseem  , md.alphagenomics@gmail.com , 617666176
+7 , Mr. Ahmed Ali , ahmedali@fics20.onmicrosoft.com , 717677176
+8 ,  Dr. Aftab Chatha  , aftab.nays@gmail.com , 817688176
+9 , Mr. Ahad Nazir  , ahadnazir@gmail.com , 917699176
+10 ,  Ms. Samar Hasan , samar@epiphany.com.pk , 101761010176
+13 , Mr. Muneeb Ahsan Malik , management@securglobal.org , 1368131368
+14 , Ms. Humaira Jabeen , humairah@reenergia.com , 1468141468
+15 , Mr. Khalid Khan , khalid@3gca.org , 1568151568
+16 , Mr. Adnan Tariq , adanantariq_94@yahoo.com , 161291616129
+17 , Mr. Talha Bin Umeed , talhabinumeed@fics20.onmicrosoft.com , 171291717129
+18 , Mr. Wajahat Saeed , mwajahat@haglerbailly.com.pk , 181291818129
+19 ,  Mr. Mauzzam Arsalan Bhatti , muazzam.arslan@alfoze.com , 191291919129
+20 ,  Mr. Ammar Hussain Jafri  , ammar@brain.net.pk , 201292020129
+21 , Mr. Taha Siddiqui , taha.siddiqui@techavenue.biz , 211262121126
+23 , Mr. Ammar Khan  , ammar.khan@nexustelecom.com.pk , 231262323126
+24 , Ms. Amna Masood  , amnamasood@fics20.onmicrosoft.com , 241262424126
+25 , Mr. Raheel Afzal  , raheelafzal@fics20.onmicrosoft.com , 251262525126
+27 , Mr. Zain Ali , xainsolangee@gmail.com , 272032727203
+29 , Mr. Faisal Abdullah , faysal.abdullah@gmail.com  , 292032929203

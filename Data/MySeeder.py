@@ -1,6 +1,9 @@
 import bcrypt
 import mysql.connector
 import time
+import random
+import string
+
 #id	project_name created_at	updated_at
 judges = {}
 
@@ -52,8 +55,13 @@ def addJudgeRecord(jteam):
 		table_name = 'users'
 		mycursor = mydb.cursor()
 		timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
-		data = ( jteam[0], jteam[1], jteam[2], getPassword(jteam[0]+jteam[3]+jteam[0]+jteam[0]+jteam[3]) , 'judge', timestamp, timestamp)
-		print(jteam[0],',',jteam[1],',',jteam[2],',',jteam[0]+jteam[3]+jteam[0]+jteam[0]+jteam[3])
+		rawpassword = getRawPassword()
+		print(rawpassword)
+		data = ( jteam[0], jteam[1], jteam[2].replace(u'\xa0',u''), getHashedPassword(rawpassword) , 'judge', timestamp, timestamp)
+		finalFile = open("FinalOutputFile.txt", "a+")
+		finalFile.write(jteam[0]+','+jteam[1]+','+jteam[2].replace(u'\xa0',u'')+','+rawpassword+"\n")
+		finalFile.close()
+		print(jteam[0],',',jteam[1],',',jteam[2].replace(u'\xa0',u''),',',rawpassword)
 		query = "Insert into "+table_name+"(id, name, email, password, role, created_at, updated_at) values (%s, %s, %s, %s, %s, %s, %s)"
 		mycursor.execute(query, data)
 		mydb.commit()
@@ -61,7 +69,12 @@ def addJudgeRecord(jteam):
 		mydb.close()
 		judges[jteam[2]] = int(jteam[0])
 
-def getPassword(password):
+def getRawPassword(length=15):
+	letters = string.ascii_letters
+	result_str = ''.join(random.choice(letters) for i in range(length))
+	return result_str
+
+def getHashedPassword(password):
 	passwd = bytes(password, 'utf-8')
 	salt = bcrypt.gensalt(rounds=10)
 	hashed = bcrypt.hashpw(passwd, salt)
@@ -72,12 +85,13 @@ def getPassword(password):
 
 
 import csv
-with open('judgesxteams.csv', 'r') as file:
+with open('judgesxteams NEW.csv', 'r') as file:
     reader = csv.reader(file)
     for row in reader:
         #print(row)
-        addJudgeTeamRecord(row)
-        addJudgeRecord(row)
+        print(row[0].split(','))
+        addJudgeTeamRecord(row[0].split(","))
+        addJudgeRecord(row[0].split(','))
 #getPassword("Muhammad")
 with open('teams_list_original.txt', 'r') as file:
     readerteams = csv.reader(file, delimiter = '(')

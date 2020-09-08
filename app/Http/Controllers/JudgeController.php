@@ -11,7 +11,9 @@ class JudgeController extends Controller
   function getData()
   {
       $id = auth()->user()->id;
-      $judge = User::find($id); 
+      $judge = User::find($id);
+      print_r($id);
+      //print_r($judge);
       if (strtoupper($judge->role)=="JUDGE"){
           $participant = '';
           if (JudgeTeams::where('judge_id', '=', $id)->exists()){
